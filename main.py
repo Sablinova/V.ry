@@ -151,13 +151,6 @@ try:
 
     print("Mobile connect", color(f"- {get_ip()}:{cfg.port}", fore=(255, 127, 80)))
 
-    print(
-        color(
-            "\nVisit https://vry.netlify.app/matchLoadouts to view full player inventories\n",
-            fore=(255, 253, 205),
-        )
-    )
-
     richConsole = RichConsole()
 
     firstTime = True
