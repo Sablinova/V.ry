@@ -69,14 +69,14 @@ class Requests:
     @staticmethod
     def copy_run_update_script(link):
         try:
-            os.mkdir(os.path.join(os.getenv('APPDATA'), "vry"))
+            os.mkdir(os.path.join(os.getenv('APPDATA'), "aVT"))
         except FileExistsError:
             pass
-        shutil.copyfile("updatescript.bat", os.path.join(os.getenv('APPDATA'), "vry", "updatescript.bat"))
+        shutil.copyfile("updatescript.bat", os.path.join(os.getenv('APPDATA'), "aVT", "updatescript.bat"))
         r_zip = requests.get(link, stream=True)
         z = zipfile.ZipFile(io.BytesIO(r_zip.content))
-        z.extractall(os.path.join(os.getenv('APPDATA'), "vry"))
-        subprocess.Popen([os.path.join(os.getenv('APPDATA'), "vry", "updatescript.bat"), os.path.join(os.getenv('APPDATA'), "vry", ".".join(os.path.basename(link).split(".")[:-1])), os.getcwd(), os.path.join(os.getenv('APPDATA'), "vry")])
+        z.extractall(os.path.join(os.getenv('APPDATA'), "aVT"))
+        subprocess.Popen([os.path.join(os.getenv('APPDATA'), "aVT", "updatescript.bat"), os.path.join(os.getenv('APPDATA'), "aVT", ".".join(os.path.basename(link).split(".")[:-1])), os.getcwd(), os.path.join(os.getenv('APPDATA'), "aVT")])
 
     @staticmethod
     def check_status():
